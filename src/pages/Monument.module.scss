@@ -1,7 +1,7 @@
 .container {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background: #fafafa;
   overflow: hidden;
   display: flex;
@@ -9,7 +9,7 @@
 }
 
 .imageWrapper {
-  height: 75vh;
+  height: 75dvh;
   width: 100vw;
   background: #eee;
   display: flex;
@@ -28,7 +28,7 @@
   left: 0;
   bottom: 0;
   width: 100vw;
-  height: 40vh;
+  height: 40dvh;
   background: #fff;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -41,7 +41,7 @@
 }
 
 .footer.open {
-  height: 95vh;
+  height: 95dvh;
   cursor: default;
   transition: height 0.4s cubic-bezier(.4,0,.2,1);
 }
@@ -132,7 +132,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 100dvh;
   background: #fff;
   box-shadow: -4px 0 24px rgba(0,0,0,0.13);
   z-index: 100;
