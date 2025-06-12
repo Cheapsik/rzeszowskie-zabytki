@@ -6,26 +6,26 @@ import ratuszImg from "../assets/ratusz.jpg";
 const monuments = [
   {
     id: 1,
-    title: "Zabytek 1",
+    title: "Ratusz",
     image: ratuszImg,
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, ex. Culpa, quasi. Omnis eos deleniti veniam eveniet laudantium autem consequuntur odio deserunt pariatur eligendi aliquam iure, voluptates dignissimos inventore placeat sapiente saepe commodi cum neque atque provident illo numquam est! Rerum deserunt aliquid reprehenderit autem excepturi laborum, quis ratione consectetur quae perspiciatis totam distinctio necessitatibus dignissimos! Vel eligendi excepturi alias repellendus, fugiat voluptatem. Optio iste tempore vitae commodi nulla officia similique, placeat quos ratione doloribus dolorem, veniam beatae animi cupiditate sint velit? Sint, est similique! Dolor, temporibus eveniet. Consequatur eos, esse eveniet facere impedit quos nulla obcaecati molestiae culpa corrupti.",
     objectPosition: "60% 45%",
     points: [
-        {
-            id: 1,
-            label: "Drzwi",
-            description: "lorem2020 ipsum dolor sit amet consectetur adipisicing elit. Fuga, ex. Culpa, quasi. Omnis eos deleniti veniam eveniet laudantium autem consequuntur odio deserunt pariatur eligendi aliquam iure, voluptates dignissimos inventore placeat sapiente saepe commodi cum neque atque provident illo numquam est! Rerum deserunt aliquid reprehenderit autem excepturi laborum, quis ratione consectetur quae perspiciatis totam distinctio necessitatibus dignissimos! Vel eligendi excepturi alias repellendus, fugiat voluptatem. Optio iste tempore vitae commodi nulla officia similique, placeat quos ratione doloribus dolorem, veniam beatae animi cupiditate sint velit? Sint, est similique! Dolor, temporibus eveniet. Consequatur eos, esse eveniet facere impedit quos nulla obcaecati molestiae culpa corrupti.",
-            top: "20%",
-            left: "18%",
-        },
-        {
-            id: 2,
-            label: "Okno",
-            description: "lorem2020 ipsum dolor sit amet consectetur adipisicing elit. Fuga, ex. Culpa, quasi. Omnis eos deleniti veniam eveniet laudantium autem consequuntur odio deserunt pariatur eligendi aliquam iure, voluptates dignissimos inventore placeat sapiente saepe commodi cum neque atque provident illo numquam est! Rerum deserunt aliquid reprehenderit autem excepturi laborum, quis ratione consectetur quae perspiciatis totam distinctio necessitatibus dignissimos! Vel eligendi excepturi alias repellendus, fugiat voluptatem. Optio iste tempore vitae commodi nulla officia similique, placeat quos ratione doloribus dolorem, veniam beatae animi cupiditate sint velit? Sint, est similique! Dolor, temporibus eveniet. Consequatur eos, esse eveniet facere impedit quos nulla obcaecati molestiae culpa corrupti.",
-            top: "40%",
-            left: "60%",
-        },
-        ]
+      {
+        id: 1,
+        label: "Drzwi",
+        description: "lorem2020 ipsum dolor sit amet consectetur adipisicing elit. Fuga, ex. Culpa, quasi. Omnis eos deleniti veniam eveniet laudantium autem consequuntur odio deserunt pariatur eligendi aliquam iure, voluptates dignissimos inventore placeat sapiente saepe commodi cum neque atque provident illo numquam est! Rerum deserunt aliquid reprehenderit autem excepturi laborum, quis ratione consectetur quae perspiciatis totam distinctio necessitatibus dignissimos! Vel eligendi excepturi alias repellendus, fugiat voluptatem. Optio iste tempore vitae commodi nulla officia similique, placeat quos ratione doloribus dolorem, veniam beatae animi cupiditate sint velit? Sint, est similique! Dolor, temporibus eveniet. Consequatur eos, esse eveniet facere impedit quos nulla obcaecati molestiae culpa corrupti.",
+        top: "20%",
+        left: "18%",
+      },
+      {
+        id: 2,
+        label: "Okno",
+        description: "lorem2020 ipsum dolor sit amet consectetur adipisicing elit. Fuga, ex. Culpa, quasi. Omnis eos deleniti veniam eveniet laudantium autem consequuntur odio deserunt pariatur eligendi aliquam iure, voluptates dignissimos inventore placeat sapiente saepe commodi cum neque atque provident illo numquam est! Rerum deserunt aliquid reprehenderit autem excepturi laborum, quis ratione consectetur quae perspiciatis totam distinctio necessitatibus dignissimos! Vel eligendi excepturi alias repellendus, fugiat voluptatem. Optio iste tempore vitae commodi nulla officia similique, placeat quos ratione doloribus dolorem, veniam beatae animi cupiditate sint velit? Sint, est similique! Dolor, temporibus eveniet. Consequatur eos, esse eveniet facere impedit quos nulla obcaecati molestiae culpa corrupti.",
+        top: "40%",
+        left: "60%",
+      },
+    ]
   },
   {
     id: 2,
