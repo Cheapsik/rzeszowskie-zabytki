@@ -72,6 +72,7 @@ const Home = () => {
               <img src={monument.image} alt={monument.title} className={styles.image} />
             </div>
             <div className={styles.descriptionWrapper}>
+              <h2 className={styles.title}>{monument.title}</h2>
               <div className={styles.description}>{monument.description}</div>
               <button
                 className={styles.button}
