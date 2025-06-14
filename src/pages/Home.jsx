@@ -17,7 +17,13 @@ const Home = () => {
             </div>
             <div className={styles.descriptionWrapper}>
               <h2 className={styles.title}>{monument.title}</h2>
-              <div className={styles.description}>{monument.description}</div>
+              <div className={styles.description}>
+                {Array.isArray(monument.description)
+                  ? monument.description
+                    .filter(block => block.type === "text")
+                    .map((block, idx) => <p key={idx}>{block.content}</p>)
+                  : monument.description}
+              </div>
               <button
                 className={styles.button}
                 onClick={() => navigate(`/${monument.id}`, { state: monument })}
