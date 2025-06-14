@@ -8,7 +8,7 @@ const App = () => {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/zabytek/:id" element={<Monument />} />
+        <Route path="/:id" element={<Monument />} />
       </Routes>
     </HashRouter>
   )

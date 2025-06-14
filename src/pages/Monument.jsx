@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { monuments } from "../utils/consts";
+import { useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark, faCircleDot, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import styles from "./Monument.module.scss";
 
 const Monument = () => {
-    const location = useLocation();
     const navigate = useNavigate();
-    const monument = location.state;
+    const { id } = useParams();
+    const monument = monuments.find(m => String(m.id) === String(id));
 
     useEffect(() => {
         if (!monument) {
@@ -26,6 +27,7 @@ const Monument = () => {
     };
 
     const handlePointClick = (point) => {
+        console.log("Point clicked:", point);
         setActivePoint(point);
     };
 
@@ -53,7 +55,35 @@ const Monument = () => {
                 <div className={styles.footerContent}>
                     <h1 className={styles.title}>{monument.title}</h1>
                     <hr className={styles.divider}></hr>
-                    <div className={styles.description}>{monument.description}</div>
+                    <div className={styles.description}>
+                        {Array.isArray(monument.description)
+                            ? monument.description.map((block, idx) => {
+                                if (block.type === "text") {
+                                    return <p key={idx}>{block.content}</p>;
+                                }
+                                if (block.type === "image") {
+                                    return (
+                                        <div className={styles.descriptionImageWrapper} key={idx}>
+                                            <img
+                                                src={block.src}
+                                                alt={block.alt}
+                                                style={{
+                                                    width: block.width || "100%",
+                                                    height: block.height || "auto"
+                                                }}
+                                            />
+                                            {block.caption && (
+                                                <div className={styles.caption}>
+                                                    {block.caption}
+                                                </div>
+                                            )}
+                                        </div>
+                                    );
+                                }
+                                return null;
+                            })
+                            : monument.description}
+                    </div>
                     <div onClick={handleToggleFooter} className={styles.toggler}>
                         {footerOpen ? <FontAwesomeIcon icon={faChevronDown} /> : <FontAwesomeIcon icon={faChevronUp} />}
                     </div>
@@ -65,7 +95,33 @@ const Monument = () => {
                         <FontAwesomeIcon icon={faXmark} />
                     </button>
                     <h3>{activePoint.label}</h3>
-                    <p>{activePoint.description}</p>
+                    {Array.isArray(activePoint.description)
+                        ? activePoint.description.map((block, idx) => {
+                            if (block.type === "text") {
+                                return <p className={styles.activePointDescription} key={idx}>{block.content}</p>;
+                            }
+                            if (block.type === "image") {
+                                return (
+                                    <div className={styles.descriptionImageWrapper} key={idx}>
+                                        <img
+                                            src={block.src}
+                                            alt={block.alt}
+                                            style={{
+                                                width: block.width || "100%",
+                                                height: block.height || "auto"
+                                            }}
+                                        />
+                                        {block.caption && (
+                                            <div className={styles.caption}>
+                                                {block.caption}
+                                            </div>
+                                        )}
+                                    </div>
+                                );
+                            }
+                            return null;
+                        })
+                        : activePoint.description}
                 </div>
             )}
         </div>
