@@ -55,7 +55,7 @@ const Monument = () => {
                 <div className={styles.footerContent}>
                     <h1 className={styles.title}>{monument.title}</h1>
                     <hr className={styles.divider}></hr>
-                    <div className={styles.description}>
+                    <div className={styles.description} style={{ overflow: footerOpen ? "hidden auto" : "hidden" }}>
                         {Array.isArray(monument.description)
                             ? monument.description.map((block, idx) => {
                                 if (block.type === "text") {

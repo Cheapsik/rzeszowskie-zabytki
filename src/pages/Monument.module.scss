@@ -154,6 +154,7 @@
   padding: 30px 40px;
   display: flex;
   flex-direction: column;
+  overflow: hidden auto;
   animation: slideInDrawer 0.3s cubic-bezier(.4,0,.2,1);
 }
 
