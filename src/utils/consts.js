@@ -79,7 +79,7 @@ export const monuments = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet."
   },
   {
-    id: 6,
+    id: 7,
     title: "Zabytek 6",
     image: "./assets/ratusz.jpg",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet."
