@@ -10,7 +10,7 @@ export const monuments = [
       { type: "image", src: ratuszImg, width: "300px", height: "200px", alt: "Ratusz w Rzeszowie", caption: "Fot.  Edward Janusz, Budynek ratusza przed przebudową, Galeria Fotografii Miasta Rzeszowa." },
       { type: "text", content: "Dzisiejszy wygląd ratusza to efekt gruntownej modernizacji z końca XIX wieku, wykonanej według projektu Franciszka Skowrona. Nowa forma  w stylu neorenesansowym z elementami neogotyku – nie tylko odpowiadała nowym funkcjom administracyjnym, ale była też wyrazem patriotyzmu i dążeń niepodległościowych w czasie zaborów" }
     ],
-    objectPosition: "60% 45%",
+    objectPosition: "60% 55%",
     points: [
       {
         id: 1,
@@ -79,7 +79,7 @@ export const monuments = [
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet."
   },
   {
-    id: 7,
+    id: 6,
     title: "Zabytek 6",
     image: "./assets/ratusz.jpg",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet."
