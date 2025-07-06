@@ -100,7 +100,7 @@ const Home = () => {
           <div
             className={styles.slider}
             style={{
-              transform: `translateX(-${current * (SLIDE_WIDTH + SLIDE_GAP)}vw)`,
+              transform: `translateX(-${current * (SLIDE_WIDTH + SLIDE_GAP)}dvw)`,
             }}
             ref={sliderRef}
           >
@@ -109,8 +109,8 @@ const Home = () => {
                 key={monument.id}
                 className={`${styles.slide} ${idx === current ? styles.active : ""}`}
                 style={{
-                  width: `${SLIDE_WIDTH}vw`,
-                  marginRight: `${SLIDE_GAP}vw`
+                  width: `${SLIDE_WIDTH}dvw`,
+                  marginRight: `${SLIDE_GAP}dvw`
                 }}
               >
                 <img
