@@ -26,7 +26,7 @@ import synagoga_new_2 from "../assets/synagoga/synagoga_new_2.png";
 
 export const monuments = [
   {
-    id: 1,
+    id: "ratusz",
     title: "Ratusz",
     image: ratuszImg,
     description: [
@@ -81,7 +81,7 @@ export const monuments = [
     ]
   },
   {
-    id: 2,
+    id: "sokol",
     title: `Gmach "Sokoła"`,
     image: gmachImg,
     description: "Gmach „Sokoła” w Rzeszowie powstał w latach 1890–1894 jako reprezentacyjna siedziba Towarzystwa Gimnastycznego „Sokół”, które promowało kulturę fizyczną, patriotyzm i działalność społeczną. Budynek w stylu historyzującym, zaprojektowany przez Albina Zagórskiego, szybko stał się ważnym centrum życia kulturalnego – odbywały się tu przedstawienia, koncerty, bale i zebrania, a także istotne spotkania polityczne, jak zjazd Stronnictwa Ludowego w 1895 roku czy zawiązanie rzeszowskiego skautingu w 1911 roku. Po wojnie budynek przejął teatr, dziś znany jako Teatr im. Wandy Siemaszkowej, który kontynuuje jego wieloletnią tradycję artystyczną, czyniąc z dawnego „Sokoła” jeden z najbardziej rozpoznawalnych i symbolicznych zabytków Rzeszowa.",
@@ -122,7 +122,7 @@ export const monuments = [
     ]
   },
   {
-    id: 3,
+    id: "zamek",
     title: "Zamek Lubomirskich",
     image: zamekImg,
     description: "Zamek Rzeszowski został zbudowany na przełomie XVI i XVII wieku przez Mikołaja Spytka Ligęzę, który przeniósł się tu z dawnej rezydencji na Starym Mieście. Początkowo był to piętrowy dwór otoczony murami i wieżami. Wkrótce rozbudowano go do formy czteroskrzydłowego zamku z fortyfikacjami ziemnymi, łączącymi elementy włoskiej i holenderskiej szkoły fortyfikacji. Po śmierci Ligęzy, jego synowie oraz później ród Lubomirskich kontynuowali rozbudowę i modernizację zamku. W XVII wieku wybitny architekt barokowy Tylman z Gameren przekształcił zamek, wzmacniając fortyfikacje i nadając mu barokowy wygląd. W XVIII wieku Karol Henryk Wiedemann przeprowadził dalsze prace fortyfikacyjne i przebudowę elewacji, dodając m.in. wieżę bramną. W XIX wieku zamek stracił funkcję rezydencjalną i pełnił rolę więzienia, w którym przetrzymywano m.in. ważnych więźniów politycznych. W czasie II wojny światowej był miejscem egzekucji i tortur. Po wojnie kontynuowano działalność więzienną do 1981 roku. Na przełomie XIX i XX wieku zamek przeszedł gruntowną przebudowę konserwatorską, która nadała mu nowoczesny wygląd, zachowując jednocześnie historyczne elementy. Obecnie zamek jest siedzibą Sądu Okręgowego",
@@ -158,7 +158,7 @@ export const monuments = [
     ]
   },
   {
-    id: 4,
+    id: "synagoga_staromiejska",
     title: "Synanoga Staromiejska",
     image: synagoga_old_Img,
     description: [
@@ -199,7 +199,7 @@ export const monuments = [
     ]
   },
   {
-    id: 5,
+    id: "synagoga_nowomiejska",
     title: "Synagoga Nowomiejska",
     image: synagoga_new_Img,
     description: [
