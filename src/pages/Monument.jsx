@@ -40,7 +40,7 @@ const Monument = () => {
             <div className={styles.imageWrapper}>
                 <div>
                     {!footerOpen 
-                    ? <button className={styles.backButton} onClick={() => navigate(-1)}>
+                    ? <button className={styles.backButton} onClick={() => navigate("/", { replace: true })}>
                         <FontAwesomeIcon icon={faArrowLeft} />
                     </button>
                     : null
