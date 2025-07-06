@@ -1,3 +1,17 @@
+:root {
+  --vh: 1vh;
+}
+
+@media (orientation: portrait) {
+  :root {
+    --vh: calc(var(--vh) * 100);
+  }
+}
+
+html, body, #app {
+  height: 100dvh;
+}
+
 html {
   margin: 0;
   padding: 0;
