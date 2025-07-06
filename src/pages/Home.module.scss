@@ -21,7 +21,6 @@ $transition: .1s ease-in-out;
   position: relative;
   margin-top: 60px;
   padding-bottom: 5px;
-  overflow: hidden;
 }
 
 .sliderOuter {
@@ -136,6 +135,7 @@ $transition: .1s ease-in-out;
   gap: 16px;
   justify-content: center;
   margin: 24px 0 0 0;
+  padding-bottom: 30px;
   flex-wrap: wrap;
 }
 
