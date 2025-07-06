@@ -69,19 +69,13 @@ export const monuments = [
   {
     id: 4,
     title: "Zabytek 4",
-    image: "./assets/ratusz.jpg",
+    image: ratuszImg,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet."
   },
   {
     id: 5,
     title: "Zabytek 5",
-    image: "./assets/ratusz.jpg",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet."
-  },
-  {
-    id: 6,
-    title: "Zabytek 6",
-    image: "./assets/ratusz.jpg",
+    image: ratuszImg,
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut laoreet."
   }
 ];

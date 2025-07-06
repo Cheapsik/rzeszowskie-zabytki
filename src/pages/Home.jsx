@@ -1,38 +1,132 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Home.module.scss";
 import { monuments } from "../utils/consts";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+const ANIMATION_TIME = 100; // ms
+const SLIDE_WIDTH = 80; //vw
+const SLIDE_GAP = 4; // vw
 const Home = () => {
   const navigate = useNavigate();
+  const [current, setCurrent] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const timeoutRef = useRef(null);
+  const sliderRef = useRef(null);
+  const [slideWidth, setSlideWidth] = useState(0);
+
+  useEffect(() => {
+    const updateSlideWidth = () => {
+      if (sliderRef.current) {
+        const containerWidth = sliderRef.current.offsetWidth;
+        setSlideWidth(containerWidth);
+      }
+    };
+
+    updateSlideWidth();
+    window.addEventListener("resize", updateSlideWidth);
+    
+    return () => {
+      window.removeEventListener("resize", updateSlideWidth);
+      clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  const handlePrev = () => {
+    if (current > 0 && !isAnimating) {
+      setCurrent(current - 1);
+      setIsAnimating(true);
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => setIsAnimating(false), ANIMATION_TIME);
+    }
+  };
+
+  const handleNext = () => {
+    if (current < monuments.length - 1 && !isAnimating) {
+      setCurrent(current + 1);
+      setIsAnimating(true);
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => setIsAnimating(false), ANIMATION_TIME);
+    }
+  };
+
+  const handleDotClick = (idx) => {
+    if (idx !== current && !isAnimating) {
+      setCurrent(idx);
+      setIsAnimating(true);
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => setIsAnimating(false), ANIMATION_TIME);
+    }
+  };
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>Zabytki</h1>
-      <div className={styles.grid}>
-        {monuments.map((monument) => (
-          <div key={monument.id} className={styles.card}>
-            <div className={styles.imageWrapper}>
-              <img src={monument.image} alt={monument.title} className={styles.image} />
-            </div>
-            <div className={styles.descriptionWrapper}>
-              <h2 className={styles.title}>{monument.title}</h2>
-              <div className={styles.description}>
-                {Array.isArray(monument.description)
-                  ? monument.description
-                    .filter(block => block.type === "text")
-                    .map((block, idx) => <p key={idx}>{block.content}</p>)
-                  : monument.description}
-              </div>
-              <button
-                className={styles.button}
-                onClick={() => navigate(`/${monument.id}`, { state: monument })}
+      <div className={styles.sliderWrapper}>
+        <div className={styles.sliderOuter}>
+          <div
+            className={styles.slider}
+            style={{
+              transform: `translateX(-${current * (SLIDE_WIDTH + SLIDE_GAP)}vw)`,
+            }}
+          >
+            {monuments.map((monument, idx) => (
+              <div
+                key={monument.id}
+                className={`${styles.slide} ${idx === current ? styles.active : ""}`}
+                style={{
+                  width: `${SLIDE_WIDTH}vw`,
+                  marginRight: `${SLIDE_GAP}vw`
+                }}
               >
-                Czytaj dalej
-              </button>
-            </div>
+                <img
+                  src={monument.image}
+                  alt={monument.title}
+                  className={`${styles.image} ${idx === current ? styles.active : ""}`}
+                />
+                {idx === current && (
+                  <button
+                    className={styles.sliderButton}
+                    onClick={() => navigate(`/${monument.id}`, { state: monument })}
+                  >
+                    <FontAwesomeIcon icon={faArrowRight} />
+                  </button>
+                )}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+        <div className={styles.dots}>
+          {monuments.map((_, idx) => (
+            <span
+              key={idx}
+              className={`${styles.dot} ${idx === current ? styles.activeDot : ""}`}
+              onClick={() => handleDotClick(idx)}
+            />
+          ))}
+        </div>
+      </div>
+      <div className={styles.sliderFooter}>
+        <h2 className={styles.sliderHeader}>Poznaj najciekawsze miejsca miasta.</h2>
+        <p className={styles.sliderSubtext}>
+          Odkryj historię, lokalne ciekawostki i niezwykły klimat Rzeszowa.
+        </p>
+        <div className={styles.sliderControls}>
+          <button
+            className={styles.controlButton}
+            onClick={handlePrev}
+            disabled={current === 0}
+          >
+            <FontAwesomeIcon icon={faChevronLeft} /> Poprzedni
+          </button>
+          <button
+            className={styles.controlButton}
+            onClick={handleNext}
+            disabled={current === monuments.length - 1}
+          >
+            Następny <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
       </div>
     </div>
   );
