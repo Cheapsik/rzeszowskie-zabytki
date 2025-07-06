@@ -151,14 +151,14 @@ const Home = () => {
             onClick={handlePrev}
             disabled={current === 0}
           >
-            <FontAwesomeIcon icon={faChevronLeft} /> Poprzedni
+            <FontAwesomeIcon icon={faChevronLeft} /> Poprzednie
           </button>
           <button
             className={styles.controlButton}
             onClick={handleNext}
             disabled={current === monuments.length - 1}
           >
-            Następny <FontAwesomeIcon icon={faChevronRight} />
+            Następne <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
       </div>

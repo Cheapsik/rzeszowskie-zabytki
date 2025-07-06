@@ -73,7 +73,11 @@ const Monument = () => {
                                 }
                                 if (block.type === "image") {
                                     return (
-                                        <div className={styles.descriptionImageWrapper} key={idx}>
+                                        <div className={styles.descriptionImageWrapper} key={idx}
+                                            style={{
+                                                flexFlow: block.flex
+                                            }}
+                                        >
                                             <img
                                                 src={block.src}
                                                 alt={block.alt}

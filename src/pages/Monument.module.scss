@@ -64,6 +64,7 @@ $blue-accent: #5d9bff;
 
 .title {
   padding: 0 30px;
+  margin: 38px 0 8px 0;
 }
 
 .description {
@@ -77,6 +78,9 @@ $blue-accent: #5d9bff;
 }
 
 .descriptionImageWrapper {
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   gap: 1rem;
 }
@@ -172,6 +176,7 @@ $blue-accent: #5d9bff;
 }
 
 .drawer {
+  max-width: 100%;
   position: fixed;
   top: 0;
   right: 0;
@@ -185,7 +190,13 @@ $blue-accent: #5d9bff;
   animation: slideInDrawer 0.3s cubic-bezier(.4,0,.2,1);
 
   .drawerContent {
-    padding: 0 30px 30px 30px;
+    padding: 0 30px 40px 30px;
+    max-width: 100dvw;
+
+    h3 {
+      font-size: 23px;
+      padding-left: .3rem;
+    }
   }
 }
 
@@ -195,7 +206,7 @@ $blue-accent: #5d9bff;
     background: transparent;
     border: 0;
     font-size: 2rem;
-    margin: 5px 5px 0 auto;
+    margin: 40px 20px 0 auto;
     color: $blue-accent;
 }
 
