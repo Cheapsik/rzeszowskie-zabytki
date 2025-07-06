@@ -17,7 +17,6 @@ const Home = () => {
   const sliderRef = useRef(null);
   const [slideWidth, setSlideWidth] = useState(0);
 
-  // SWIPE STATE
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
 
@@ -65,7 +64,6 @@ const Home = () => {
     }
   };
 
-  // SWIPE HANDLERS
   const onTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -77,7 +75,7 @@ const Home = () => {
   const onTouchEnd = () => {
     if (touchStartX.current !== null && touchEndX.current !== null) {
       const delta = touchStartX.current - touchEndX.current;
-      if (Math.abs(delta) > 50 && !isAnimating) { // minimalny dystans do swipe
+      if (Math.abs(delta) > 50 && !isAnimating) {
         if (delta > 0 && current < monuments.length - 1) {
           handleNext();
         } else if (delta < 0 && current > 0) {

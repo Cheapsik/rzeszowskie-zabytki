@@ -64,15 +64,19 @@ $blue-accent: #5d9bff;
 
 .title {
   padding: 0 30px;
-  margin: 38px 0 8px 0;
+  margin: 40px 0 8px 0;
 }
 
 .description {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 32px;
   color: #222;
   line-height: 1.6;
   padding: 0 30px;
   
   .blockContent {
+    margin: 0;
     transition: .3s ease-in-out;
   }
 }
@@ -138,7 +142,7 @@ $blue-accent: #5d9bff;
 .divider {
     width: 40%;
     border: 1px solid $blue-accent;
-    margin: 0 0 15px 30px;
+    margin: 0 0 31px 30px;
 }
 .point {
   position: absolute;
@@ -173,6 +177,13 @@ $blue-accent: #5d9bff;
   font-size: 14px;
   font-weight: 200;
   line-height: 1.4;
+  margin: 0;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 32px;
 }
 
 .drawer {
@@ -195,9 +206,14 @@ $blue-accent: #5d9bff;
 
     h3 {
       font-size: 23px;
-      padding-left: .3rem;
     }
   }
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .closeDrawer {
@@ -206,7 +222,6 @@ $blue-accent: #5d9bff;
     background: transparent;
     border: 0;
     font-size: 2rem;
-    margin: 40px 20px 0 auto;
     color: $blue-accent;
 }
 

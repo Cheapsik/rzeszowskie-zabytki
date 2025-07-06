@@ -31,7 +31,7 @@ export const monuments = [
     image: ratuszImg,
     description: [
       { type: "text", content: "Historia rzeszowskiego ratusza sięga XIV wieku, powstał wkrótce po lokacji miasta w 1354 roku jako drewniany budynek pełniący funkcję władz miejskich, sądu oraz  straży. Przed 1591 rokiem, z inicjatywy Mikołaja Spytka Ligęzy, wzniesiono nowy, murowany ratusz. Zniszczony podczas najazdu Jerzego II Rakoczego w 1657 r., został odbudowany w drugiej połowie XVII wieku, a około 1730 r. poddany przebudowie pod kierunkiem Karola Henryka Wiedemanna." },
-      { type: "image", flex: 'column', src: ratuszDescription, width: "100%", height: "auto", alt: "Zdjęcie ratusza", caption: "Fot.  Edward Janusz, Budynek ratusza przed przebudową, Galeria Fotografii Miasta Rzeszowa." },
+      { type: "image", flex: 'row', src: ratuszDescription, width: "200%", height: "auto", alt: "Zdjęcie ratusza", caption: "Fot.  Edward Janusz, Budynek ratusza przed przebudową, Galeria Fotografii Miasta Rzeszowa." },
       { type: "text", content: "Dzisiejszy wygląd ratusza to efekt gruntownej modernizacji z końca XIX wieku, wykonanej według projektu Franciszka Skowrona. Nowa forma  w stylu neorenesansowym z elementami neogotyku – nie tylko odpowiadała nowym funkcjom administracyjnym, ale była też wyrazem patriotyzmu i dążeń niepodległościowych w czasie zaborów" }
     ],
     objectPosition: "60% 55%",
@@ -102,7 +102,7 @@ export const monuments = [
         label: "Manifest",
         description: [
           { type: "image", src: gmach_2, width: "100%", height: "auto", alt: "Zdjęcie góry gmachu" },
-          { type: "text", content: "Pod ratuszem, dawnym gmachem miejskim znajdowały się piwnice, które przez wieki tętniły życiem handlowym. To właśnie tutaj sprzedawano lokalne trunki: miód pitny, piwo marcowe i wina. Budynek stał w samym centrum miejskiego gwaru tuż przy pręgierzu, wadze miejskiej, kramach i postrzygalni sukna. W dni targowe to miejsce stawało się sercem Rzeszowa, a sygnał do rozpoczęcia handlu dawał zegar z wieży ratusza, górującej nad rynkiem." },
+          { type: "text", content: "Pierwotna attyka budynku rzeszowskiego „Sokoła” była pięknym przykładem polskiego renesansu, inspirowanego słynnymi Sukiennicami w Krakowie. Składała się z bogato zdobionego, ażurowego pasa wieńczącego fasadę, dekorowanego maszkaronami — rzeźbionymi fantazyjnymi twarzami. Ten element architektury był nie tylko ozdobą, ale także świadomym nawiązaniem do złotego wieku polskiej kultury, podkreślającym patriotyczne idee „Sokoła”." },
           { type: "image", src: gmach_3, width: "100%", height: "auto", alt: "Zdjęcie zbliżenia na attykę" },
           { type: "text", content: "Niestety, w latach 50. XX wieku attykę usunięto podczas przebudowy w duchu realizmu socjalistycznego. W jej wyniku z fasady budynku usunięto attyki oraz pierwotną dekorację architektoniczną w stylu eklektyczno-modernistycznym Elementy te kojarzono z przedwojennym burżuazyjnym stylem życia i wcześniejszym porządkiem społecznym.  W ich miejscu wprowadzono trójkątny naczółek ozdobiony symbolicznymi postaciami antycznych muz : Melpomene (muza tragedii ) i Erato (muza poezji miłosnej). Dopiero po latach, w trakcie prac konserwatorskich i modernizacyjnych, przywrócono budynkowi historyczny wygląd, przywracając fasadzie dawny charakter i pierwotny wyraz ideowy." },
           { type: "image", src: gmach_4, width: "100%", height: "auto", alt: "Zdjęcie leżącej attyki" },

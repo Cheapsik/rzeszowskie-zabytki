@@ -105,11 +105,14 @@ const Monument = () => {
             </div>
             {activePoint && (
                 <div className={styles.drawer}>
-                    <button className={styles.closeDrawer} onClick={handleCloseDrawer}>
-                        <FontAwesomeIcon icon={faXmark} />
-                    </button>
                     <div className={styles.drawerContent}>
-                        <h3>{activePoint.label}</h3>
+                        <div className={styles.drawerHeader}>
+                            <h3>{activePoint.label}</h3>
+                            <button className={styles.closeDrawer} onClick={handleCloseDrawer}>
+                                <FontAwesomeIcon icon={faXmark} />
+                            </button>
+                        </div>
+                        <div className={styles.contentWrapper}>
                         {Array.isArray(activePoint.description)
                             ? activePoint.description.map((block, idx) => {
                                 if (block.type === "text") {
@@ -136,8 +139,9 @@ const Monument = () => {
                                 }
                                 return null;
                             })
-                            : activePoint.description}
+                            : activePoint.description}      
                         </div>
+                    </div>
                 </div>
             )}
         </div>
