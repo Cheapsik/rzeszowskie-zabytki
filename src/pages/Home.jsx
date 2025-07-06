@@ -8,6 +8,7 @@ import { faArrowRight, faChevronLeft, faChevronRight } from '@fortawesome/free-s
 const ANIMATION_TIME = 100; // ms
 const SLIDE_WIDTH = 80; //vw
 const SLIDE_GAP = 4; // vw
+
 const Home = () => {
   const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
@@ -15,6 +16,10 @@ const Home = () => {
   const timeoutRef = useRef(null);
   const sliderRef = useRef(null);
   const [slideWidth, setSlideWidth] = useState(0);
+
+  // SWIPE STATE
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
 
   useEffect(() => {
     const updateSlideWidth = () => {
@@ -26,7 +31,7 @@ const Home = () => {
 
     updateSlideWidth();
     window.addEventListener("resize", updateSlideWidth);
-    
+
     return () => {
       window.removeEventListener("resize", updateSlideWidth);
       clearTimeout(timeoutRef.current);
@@ -60,15 +65,44 @@ const Home = () => {
     }
   };
 
+  // SWIPE HANDLERS
+  const onTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const onTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (touchStartX.current !== null && touchEndX.current !== null) {
+      const delta = touchStartX.current - touchEndX.current;
+      if (Math.abs(delta) > 50 && !isAnimating) { // minimalny dystans do swipe
+        if (delta > 0 && current < monuments.length - 1) {
+          handleNext();
+        } else if (delta < 0 && current > 0) {
+          handlePrev();
+        }
+      }
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.sliderWrapper}>
-        <div className={styles.sliderOuter}>
+        <div className={styles.sliderOuter}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <div
             className={styles.slider}
             style={{
               transform: `translateX(-${current * (SLIDE_WIDTH + SLIDE_GAP)}vw)`,
             }}
+            ref={sliderRef}
           >
             {monuments.map((monument, idx) => (
               <div

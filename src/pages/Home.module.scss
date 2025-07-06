@@ -88,11 +88,11 @@ $transition: .1s ease-in-out;
 }
 
 .dot {
-  width: 12px;
-  height: 12px;
+  min-width: 12px;
+  min-height: 12px;
   border-radius: 50%;
   background: #d2d6db;
-  transition: $transition;
+  transition: .3s ease-in-out;
   cursor: pointer;
   border: none;
   outline: none;
@@ -101,7 +101,9 @@ $transition: .1s ease-in-out;
 
 .activeDot {
   background: $blue-accent;
-  transform: scale(1.2);
+  width: 16px;
+  height: 16px;
+  transition: .3s ease-in-out;
 }
 
 .sliderFooter {
@@ -109,23 +111,23 @@ $transition: .1s ease-in-out;
   text-align: center;
   width: 100%;
   max-width: 800px;
-  padding: 0 16px 16px 0;
+  padding: 0 16px 40px 16px;
 }
 
 .sliderHeader {
-  font-size: clamp(1.8rem, 5vw, 2.2rem);
+  font-size: 1.4rem;
   font-weight: 700;
   color: $blue-accent;
-  margin-bottom: 8px;
+  margin: 40px 0 20px 0;
+  padding: 0 10dvw;
 }
 
 .sliderSubtext {
   font-size: clamp(1rem, 3vw, 1.1rem);
   color: #555;
-  margin-bottom: 32px;
+  margin: 20px 0;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 10dvw;
 }
 
 .sliderControls {
