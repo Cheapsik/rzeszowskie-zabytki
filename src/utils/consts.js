@@ -31,7 +31,7 @@ export const monuments = [
     image: ratuszImg,
     description: [
       { type: "text", content: "Historia rzeszowskiego ratusza sięga XIV wieku, powstał wkrótce po lokacji miasta w 1354 roku jako drewniany budynek pełniący funkcję władz miejskich, sądu oraz  straży. Przed 1591 rokiem, z inicjatywy Mikołaja Spytka Ligęzy, wzniesiono nowy, murowany ratusz. Zniszczony podczas najazdu Jerzego II Rakoczego w 1657 r., został odbudowany w drugiej połowie XVII wieku, a około 1730 r. poddany przebudowie pod kierunkiem Karola Henryka Wiedemanna." },
-      { type: "image", src: ratuszDescription, width: "300%", height: "auto", alt: "Zdjęcie ratusza", caption: "Fot.  Edward Janusz, Budynek ratusza przed przebudową, Galeria Fotografii Miasta Rzeszowa." },
+      { type: "image", flex: 'row', src: ratuszDescription, width: "300%", height: "auto", alt: "Zdjęcie ratusza", caption: "Fot.  Edward Janusz, Budynek ratusza przed przebudową, Galeria Fotografii Miasta Rzeszowa." },
       { type: "text", content: "Dzisiejszy wygląd ratusza to efekt gruntownej modernizacji z końca XIX wieku, wykonanej według projektu Franciszka Skowrona. Nowa forma  w stylu neorenesansowym z elementami neogotyku – nie tylko odpowiadała nowym funkcjom administracyjnym, ale była też wyrazem patriotyzmu i dążeń niepodległościowych w czasie zaborów" }
     ],
     objectPosition: "60% 55%",

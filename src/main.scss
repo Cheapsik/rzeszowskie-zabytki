@@ -9,7 +9,7 @@
 }
 
 html, body, #app {
-  height: 100dvh;
+  height: var(--vh);
 }
 
 html {
@@ -25,6 +25,8 @@ body {
   overflow: hidden auto;
   margin: 0;
   padding: 0;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 #root {
