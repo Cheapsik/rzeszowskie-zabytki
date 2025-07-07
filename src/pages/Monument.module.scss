@@ -8,6 +8,7 @@ $blue-accent: #5d9bff;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  overscroll-behavior: contain;
 }
 
 .imageWrapper {
@@ -209,6 +210,7 @@ $blue-accent: #5d9bff;
   display: flex;
   flex-direction: column;
   overflow: hidden auto;
+  overscroll-behavior: contain;
   animation: slideInDrawer 0.3s cubic-bezier(.4,0,.2,1);
 
   .drawerContent {
