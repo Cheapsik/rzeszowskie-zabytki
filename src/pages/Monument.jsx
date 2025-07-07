@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { monuments } from "../utils/consts";
 import { useNavigate, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,7 +8,10 @@ import styles from "./Monument.module.scss";
 const Monument = () => {
     const navigate = useNavigate();
     const { id } = useParams();
+    const descriptionRef = useRef(null);
     const monument = monuments.find(m => String(m.id) === String(id));
+    const [footerOpen, setFooterOpen] = useState(false);
+    const [activePoint, setActivePoint] = useState(null);
 
     useEffect(() => {
         if (!monument) {
@@ -16,8 +19,11 @@ const Monument = () => {
         }
     }, [monument, navigate]);
 
-    const [footerOpen, setFooterOpen] = useState(false);
-    const [activePoint, setActivePoint] = useState(null);
+    useEffect(() => {
+        if (!footerOpen && descriptionRef.current) {
+            descriptionRef.current.scrollTop = 0;
+        }
+    }, [footerOpen]);
 
     if (!monument) return null;
 
@@ -27,7 +33,6 @@ const Monument = () => {
     };
 
     const handlePointClick = (point) => {
-        console.log("Point clicked:", point);
         setActivePoint(point);
     };
 
@@ -39,11 +44,11 @@ const Monument = () => {
         <div className={styles.container}>
             <div className={styles.imageWrapper}>
                 <div>
-                    {!footerOpen 
-                    ? <button className={styles.backButton} onClick={() => navigate("/", { replace: true })}>
-                        <FontAwesomeIcon icon={faArrowLeft} />
-                    </button>
-                    : null
+                    {!footerOpen
+                        ? <button className={styles.backButton} onClick={() => navigate("/", { replace: true })}>
+                            <FontAwesomeIcon icon={faArrowLeft} />
+                        </button>
+                        : null
                     }
                 </div>
                 <img src={monument.image} alt={monument.title} className={styles.image} style={monument.imageOffset} />
@@ -56,7 +61,7 @@ const Monument = () => {
                         aria-label={point.label}
                     >
                         <div className={styles.filler}>
-                        <FontAwesomeIcon icon={faInfo} />
+                            <FontAwesomeIcon icon={faInfo} />
                         </div>
                     </button>
                 ))}
@@ -64,12 +69,13 @@ const Monument = () => {
             <div className={`${styles.footer} ${footerOpen ? styles.open : ""}`}>
                 <div className={styles.footerContent}>
                     <h1 className={styles.title}>{monument.title}</h1>
-                    <hr className={styles.divider}></hr>
-                    <div className={styles.description} style={{ overflow: footerOpen ? "hidden auto" : "hidden" }}>
+                    <div className={styles.description}
+                        ref={descriptionRef}
+                        style={{ overflow: footerOpen ? "hidden auto" : "hidden" }}>
                         {Array.isArray(monument.description)
                             ? monument.description.map((block, idx) => {
                                 if (block.type === "text") {
-                                    return <p className={styles.blockContent} style={{padding: !footerOpen && "0 0 500px 0"}} key={idx}>{block.content}</p>;
+                                    return <p className={styles.blockContent} style={{ padding: !footerOpen && "0 0 500px 0" }} key={idx}>{block.content}</p>;
                                 }
                                 if (block.type === "image") {
                                     return (
@@ -113,33 +119,33 @@ const Monument = () => {
                             </button>
                         </div>
                         <div className={styles.contentWrapper}>
-                        {Array.isArray(activePoint.description)
-                            ? activePoint.description.map((block, idx) => {
-                                if (block.type === "text") {
-                                    return <p className={styles.activePointDescription} key={idx}>{block.content}</p>;
-                                }
-                                if (block.type === "image") {
-                                    return (
-                                        <div className={styles.descriptionImageWrapper} key={idx}>
-                                            <img
-                                                src={block.src}
-                                                alt={block.alt}
-                                                style={{
-                                                    width: block.width || "100%",
-                                                    height: block.height || "auto"
-                                                }}
-                                            />
-                                            {block.caption && (
-                                                <div className={styles.caption}>
-                                                    {block.caption}
-                                                </div>
-                                            )}
-                                        </div>
-                                    );
-                                }
-                                return null;
-                            })
-                            : activePoint.description}      
+                            {Array.isArray(activePoint.description)
+                                ? activePoint.description.map((block, idx) => {
+                                    if (block.type === "text") {
+                                        return <p className={styles.activePointDescription} key={idx}>{block.content}</p>;
+                                    }
+                                    if (block.type === "image") {
+                                        return (
+                                            <div className={styles.descriptionImageWrapper} key={idx}>
+                                                <img
+                                                    src={block.src}
+                                                    alt={block.alt}
+                                                    style={{
+                                                        width: block.width || "100%",
+                                                        height: block.height || "auto"
+                                                    }}
+                                                />
+                                                {block.caption && (
+                                                    <div className={styles.caption}>
+                                                        {block.caption}
+                                                    </div>
+                                                )}
+                                            </div>
+                                        );
+                                    }
+                                    return null;
+                                })
+                                : activePoint.description}
                         </div>
                     </div>
                 </div>
